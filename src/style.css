@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.nav-li{
+    @apply  cursor-pointer hover:font-bold
+}
+.li-active{
+    @apply h-[2px] border-0 bg-purple
+}
+img{
+    @apply rounded-sm
+}
