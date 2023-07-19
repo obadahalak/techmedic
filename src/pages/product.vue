@@ -1,16 +1,14 @@
 <script setup>
-import { onMounted, ref } from 'vue';
+import { onMounted } from 'vue';
 import { useProduct } from '../stores/product';
 import sliderHeader from '../components/Header/slider-header.vue';
 import { useRouter } from 'vue-router';
-// import { Carousel } from 'flowbite-vue';
 const product = useProduct();
 
-const  baseurlimage=import.meta.env.VITE_BASE_URL_IMAGE;
 const id = useRouter().currentRoute.value.params.id;
 
 onMounted(() => {
-    // alert(id);
+   
     product.getById(id);
    
 });
