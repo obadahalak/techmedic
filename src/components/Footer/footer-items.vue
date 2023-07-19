@@ -12,7 +12,7 @@ import ContactWithUsFooter from './ContactWithUs-footer.vue';
     <div class="">
 
   
-    <div ref="footer" class="grid lg:grid-cols-4 md:grid-cols-2 bg-gray-800 gap-5 mt-auto p-10">
+    <div ref="footer" class="grid lg:grid-cols-4 md:grid-cols-2 bg-gray-800 gap-5 mt-auto p-6">
        
        
         <aboutUsFooter />
