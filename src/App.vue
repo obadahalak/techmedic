@@ -5,8 +5,15 @@ import loader from '@/components/base/loader.vue'
 
 </script>
 
+<style>
+@font-face {
+  font-family: leelawad;
+  src: url('assets/leelawad.woff');
+}
+</style>
+
 <template>
-  <div class="flex flex-col h-screen justify-between">
+  <div class="flex flex-col h-screen justify-between" style="font-family: leelawad;">
 
     <navbarHeader/>
     

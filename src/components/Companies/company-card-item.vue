@@ -8,7 +8,7 @@ const baseImageUrl = import.meta.env.VITE_BASE_URL_IMAGE;
     
     
     <div v-for="company in useCompany().data" :key="company.id" class="w-1/2 ">
-        <div class=" bg-green text-white p-1 rounded-r-2xl w-11/12 sticky -mb-4   ">
+        <div class=" bg-green text-white p-1 w-11/12 sticky -mb-4   " style="border-radius: 0px 40px 40px 0px;">
 
 
             <p class="p-1 ml-5 font-semibold truncate">{{ company.name }}</p>

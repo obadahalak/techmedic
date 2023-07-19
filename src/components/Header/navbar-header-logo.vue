@@ -3,14 +3,14 @@
 <template>
   <li class="flex-col mr-auto  font-bold text-xl tracking-wide	">
     
+    <div class="relative">
     <span>
-      TECMEDIC
+      TECHMEDIC
        
 
   </span>
-  <div class="">
 
-    <p class="text-sm font-thin ml-10">comapny</p>
+    <p class="text-sm font-bold absolute" style="right: 0;" >comapny</p>
   </div>
 </li>
   
