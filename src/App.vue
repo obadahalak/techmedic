@@ -19,7 +19,7 @@ import loader from '@/components/base/loader.vue'
     
     <loader/>
    
-    <div class="mb-auto ">
+    <div class="mb-auto " style="">
       
       <RouterView />
     </div>

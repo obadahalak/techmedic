@@ -2,7 +2,7 @@ import { defineStore } from 'pinia';
 import http from '@/base/http.js';
 export const useCertificate = defineStore('certificate', {
     state: () => ({
-        data: [],
+        data: null,
         item: {},
         meta: {
             current_page: 1,

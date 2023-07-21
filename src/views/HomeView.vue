@@ -14,8 +14,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <div v-show="home.show()">
-
+    <div v-show="home.show()">
+      
     <sliderHeader :images="home.bannners"  />
     <div class="mt-20 lg:ml-20 md:ml-10  ml-5  ">
       <cardCompanyList />

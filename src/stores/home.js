@@ -4,7 +4,7 @@ export const useHome = defineStore('home', {
     state: () => ({
         companies: [],
         products: [],
-        bannners:[],
+        bannners:null,
         empty: false,
         error: '',
 

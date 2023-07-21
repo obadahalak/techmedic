@@ -3,7 +3,7 @@ import http from '@/base/http.js';
 
 export const useProduct = defineStore('product', {
     state: () => ({
-        data: [],
+        data: null,
         item: {},
         error: null,
         meta: { current_page: 1 },
