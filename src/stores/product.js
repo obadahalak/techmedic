@@ -71,6 +71,10 @@ export const useProduct = defineStore('product', {
                 });
             }
         },
+        show() {
+            if (this.data.length > 0) return true;
+            return false;
+        }
 
 
     },

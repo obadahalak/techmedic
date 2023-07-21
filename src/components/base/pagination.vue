@@ -1,10 +1,7 @@
 <script setup>
-import { onMounted } from 'vue';
 import { usePaginate } from '../../composables/usePaginate';
 let props=defineProps(['store','meta']);
-// onMounted(()=>{
-//    console.log(window.screenY);
-// });
+
 
 </script>
 

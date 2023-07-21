@@ -1,8 +1,7 @@
-certificate<script setup>
+<script setup>
 
 let props = defineProps(['certificate']);
 
-const  baseurlimage=import.meta.env.VITE_BASE_URL_IMAGE;
 </script>
 <template>
    

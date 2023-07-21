@@ -4,7 +4,6 @@ import CategoryDropdown from '../Categoires/CategoryDropdown.vue';
 <template>
       
     <div class=" flex justify-center  mb-10">
-        <!-- <p>asd</p> -->
         <CategoryDropdown/>
         <div class="w-1/2">
                 <input type="text" class="p-2  w-full border rounded-r-none rounded-l-none rounded-md">

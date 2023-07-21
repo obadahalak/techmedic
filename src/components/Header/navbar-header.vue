@@ -1,7 +1,6 @@
 
 <script setup>
 import {  ref } from 'vue';
-import navbarHeaderItem from './navbar-header-item.vue';
 import navbarHeaderSearch from './navbar-header-search.vue';
 import navbarHeaderLogo from './navbar-header-logo.vue'
 

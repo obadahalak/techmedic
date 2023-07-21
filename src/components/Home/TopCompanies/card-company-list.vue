@@ -15,5 +15,4 @@ const home = useHome();
       <cardCompanyItem   v-for="company in home.companies" :key="company.id" :company="company" />
     </div>
 
-  <!-- </div> -->
 </template>
