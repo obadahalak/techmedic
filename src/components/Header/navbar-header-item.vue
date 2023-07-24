@@ -40,7 +40,7 @@ function activeItem(li) {
 
 <template>
 
-     
+    
   <li class="nav-li p-2" v-for="(li , index) in listItems" v-show="props.menu" >
     <router-link :to="{name:`${li.path}`}">
 

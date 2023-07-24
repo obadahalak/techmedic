@@ -8,11 +8,11 @@ const products = useProduct();
 
 </script>
 <template>
-    <div class="grid lg:grid-cols-3  md:grid-cols-2 place-items-center gap-20 mt-10  my-10">
+    <div class="grid lg:grid-cols-3  md:grid-cols-2  place-items-center gap-8  mt-10  ">
         
         <productCardItem  :products="products.data" />
     </div>
-    <div class="flex justify-center my-10">
+    <div class="flex justify-center my-20 ">
             <pagination 
             :meta="products.meta"
             :store="products"

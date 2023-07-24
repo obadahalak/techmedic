@@ -22,7 +22,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <div v-if="products.data">
+    <div v-if="products.data" class="">
        
         <div v-show="products.show()">
 

@@ -6,10 +6,10 @@ const CompanyView = () => import('../views/CompanyView.vue')
 const CertificationView = () => import('../views/CertificationView.vue')
 const CompanyPage = () => import('@/pages/company.vue')
 const ProductPage = () => import('@/pages/product.vue')
-const CertificatePage = () => import('@/pages/CertificatePage.vue')
+const CertificatePage = () => import('@/pages/certificate.vue')
 const AboutusPage = () => import('@/pages/aboutus.vue')
 
-const NotFound = () => import('../views/admin/NotFoundView.vue');
+const NotFound = () => import('../views/NotFoundView.vue');
 const router = createRouter({
   history: createWebHistory(),
   routes: [

@@ -3,7 +3,7 @@
 import {  ref } from 'vue';
 import navbarHeaderSearch from './navbar-header-search.vue';
 import navbarHeaderLogo from './navbar-header-logo.vue'
-
+import navbarHeaderItem from './navbar-header-item.vue';
 import {useRouter} from 'vue-router';
 let toggle = ref(true);
 let header = ref();
@@ -35,7 +35,7 @@ let header = ref();
             </li>
           </div>
         </div>
-        <navbar-Header-Item :menu="toggle" />
+        <navbarHeaderItem :menu="toggle" />
       </ul>
     </nav>
   </div>
