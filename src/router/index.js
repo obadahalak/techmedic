@@ -9,6 +9,7 @@ const ProductPage = () => import('@/pages/product.vue')
 const CertificatePage = () => import('@/pages/CertificatePage.vue')
 const AboutusPage = () => import('@/pages/aboutus.vue')
 
+const NotFound = () => import('../views/admin/NotFoundView.vue');
 const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -58,6 +59,16 @@ const router = createRouter({
       path: '/admin/login',
       name: 'login',
       component: LoginView
+    },
+    {
+      path:  '/:pathMatch(.*)*',
+      redirect: '/page-not-found'
+    },
+
+    {
+      path: '/page-not-found',
+      name: 'page-not-found',
+      component: NotFound
     },
   
   ]
