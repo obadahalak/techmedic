@@ -16,40 +16,6 @@ onMounted(() => {
   home.getBanners().then((response) => {
 
     images.value = home.bannners;
-    function inactiveAllImages() {
-      images.value.filter((i) => {
-        i.active = false;
-      });
-    }
-    function isLastSlide() {
-
-      if (current_slide.value == images.value.length) {
-        current_slide.value = 0;
-        return true;
-      }
-    }
-    function isFirstSlide() {
-      if (current_slide.value == 0) {
-        current_slide.value = images.value.length;
-        return true;
-      }
-    }
-
-    function next() {
-      isLastSlide()
-
-      inactiveAllImages();
-      images.value[current_slide.value].active = true;
-      current_slide.value += 1;
-    }
-    function prev() {
-      isFirstSlide()
-
-
-      inactiveAllImages()
-      current_slide.value -= 1;
-      images.value[current_slide.value].active = true;
-    }
 
     setInterval(() => {
 
@@ -64,13 +30,49 @@ onMounted(() => {
 });
 
 
+function inactiveAllImages() {
+  images.value.filter((i) => {
+    i.active = false;
+  });
+}
+
+
+function isLastSlide() {
+
+  if (current_slide.value == images.value.length) {
+    current_slide.value = 0;
+    return true;
+  }
+}
+function isFirstSlide() {
+  if (current_slide.value == 0) {
+    current_slide.value = images.value.length;
+    return true;
+  }
+}
+
+function next() {
+  isLastSlide()
+
+  inactiveAllImages();
+  images.value[current_slide.value].active = true;
+  current_slide.value += 1;
+}
+function prev() {
+  isFirstSlide()
+
+
+  inactiveAllImages()
+  current_slide.value -= 1;
+  images.value[current_slide.value].active = true;
+}
 
 
 </script>
 
 <template>
   <div v-show="home.show()">
-  
+
     <div v-show="home.bannners && images" class="w-full h-80 relative ">
 
       <div class="flex justify-center relative ">
