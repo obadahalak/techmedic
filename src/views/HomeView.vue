@@ -13,10 +13,10 @@ let images = ref(home.bannners);
 onMounted(() => {
   home.getCompanies();
   home.getProducts();
-  home.getBanners().then((response) => {
+  home.getBanners().then(() => {
 
     images.value = home.bannners;
-
+    images.value[0].active=true;
     setInterval(() => {
 
       if (isLastSlide());
@@ -60,8 +60,6 @@ function next() {
 }
 function prev() {
   isFirstSlide()
-
-
   inactiveAllImages()
   current_slide.value -= 1;
   images.value[current_slide.value].active = true;
@@ -73,24 +71,12 @@ function prev() {
 <template>
   <div v-show="home.show()">
 
-    <div v-show="home.bannners && images" class="w-full h-80 relative ">
-
-      <div class="flex justify-center relative ">
-        <div class="absolute slider-item  w-full" v-for="image in images">
-
-          <img class="   h-96	mx-auto w-[95%]" :src="image.src" v-show="image.active == true">
-        </div>
-        <div class="absolute inset-0  ">
-          <div class="flex items-center  justify-between h-96">
-
-
-            <button class="btn lg:mx-10 mx-4 " @click="prev()">&#10094;</button>
-            <button class="btn lg:mx-10 mx-4" @click="next()">&#10095;</button>
-
-          </div>
-        </div>
-      </div>
-    </div>
+    <sliderHeader 
+    v-show="home.bannners && images"
+    :images="images"
+    @nextSlide="next"
+    @prevSlide="prev"
+      />
 
 
 
@@ -106,13 +92,3 @@ function prev() {
   </div>
 </template>
 
-<style scoped>
-.btn {
-
-  padding: 16px;
-  color: black;
-  font-size: 24px;
-  font-weight: bold;
-  cursor: pointer;
-}
-</style>

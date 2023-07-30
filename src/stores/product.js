@@ -19,21 +19,24 @@ export const useProduct = defineStore('product', {
                 this.error = error.response.data;
             });
         },
-        getById(id) {
-          
+        async getById(id) {
 
-                http.get(`products/${id}`).then((response) => {
 
-                    this.item = response.data['data'];
-                    this.item.images.forEach((e) => {
-                        var path =  e.path;
-                        e.path = path;
+            await http.get(`products/${id}`).then((response) => {
 
-                    });
-                   
-                }).catch((error) => {
-                    this.error = error.response.data;
+                this.item = response.data['data'];
+                this.item.images.forEach((e) => {
+                    var path = e.path;
+                    e.path = path;
+
                 });
+                this.item.images.filter((i) => {
+                    i['active'] = false;
+                });
+
+            }).catch((error) => {
+                this.error = error.response.data;
+            });
 
         },
 
