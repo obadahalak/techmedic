@@ -8,7 +8,7 @@ const props = defineProps(['images']);
 <template>
   <div class="mx-4">
 
-    <Carousel :pictures="props.images"></Carousel>
+    <Carousel  :pictures="props.images"></Carousel>
 
   </div>
 </template>

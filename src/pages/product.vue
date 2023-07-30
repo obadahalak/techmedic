@@ -23,7 +23,7 @@ onMounted(() => {
     
     <div v-show="product.item?.images">
 
-            <sliderHeader :images="product.item?.images"  />
+            <sliderHeader class="object-contain" :images="product.item?.images"  />
        
         
     <div  class="grid place-items-center  ">

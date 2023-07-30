@@ -11,6 +11,9 @@
     @apply h-[2px] border-0 bg-purple
 }
 img{
-    @apply rounded-sm
+    @apply rounded-sm 
 }
 
+#default-carousel img{
+   @apply  object-contain
+}

@@ -4,7 +4,7 @@ export const useHome = defineStore('home', {
     state: () => ({
         companies: [],
         products: [],
-        bannners:null,
+        bannners: null,
         empty: false,
         error: '',
 
@@ -36,11 +36,16 @@ export const useHome = defineStore('home', {
             });
         },
 
-        getBanners(){
-            http.get(`/slider-images`).then((response)=>{
-                this.bannners=response.data.data;
-            }).catch((error)=>{
-                this.error=error.response.data;
+       async getBanners() {
+           await http.get(`/slider-images`).then((response) => {
+                response.data.data.filter((i) => {
+                    i['active'] = false;
+                });
+
+                 this.bannners = response.data.data;
+                 return this.bannners;
+            }).catch((error) => {
+                this.error = error.response.data;
             });
         },
         show() {
