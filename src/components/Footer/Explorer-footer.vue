@@ -7,11 +7,11 @@
 
                     <li class="">Home</li>
                 </router-link>
-                <router-link :to="{ path: 'aboutUs' }">
+                <router-link :to="{ name: 'aboutUs' }">
 
                     <li class="mt-2">About us</li>
                 </router-link>
-                <router-link :to="{ path: 'company' }">
+                <router-link :to="{  name:'company' }">
 
                     <li class="mt-2">Products</li>
                 </router-link>

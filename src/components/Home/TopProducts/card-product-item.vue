@@ -7,7 +7,7 @@ const baseImageUrl = import.meta.env.VITE_BASE_URL_IMAGE;
   
   <div class="mb-10">
 
-    <img class="w-52" :src="`${baseImageUrl}${props.product.image}`" alt="" />
+    <img class="w-52" :src="`${props.product.image}`" alt="" />
 
     <div class="mt-4 w-52">
       <p class="text-lg font-bold">{{ props.product.name }}</p>

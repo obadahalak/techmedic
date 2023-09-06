@@ -76,7 +76,7 @@ function prev() {
         <div class="mb-20">
 
             <sliderHeader 
-            class="lg:mx-20 object-contain "
+            class="lg:mx-20 object-contain"
             :images="images"
             @nextSlide="next"
             @prevSlide="prev"
