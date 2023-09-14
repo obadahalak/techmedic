@@ -5,8 +5,7 @@ import 'simple-notify/dist/simple-notify.min.css'
 import { useGlobal } from '@/store/global'
 
 const createInstance = axios.create({
-  baseURL: 'http://127.0.0.1:60/api',
-
+  baseURL: `${import.meta.env.VITE_BASE_URL}`,
   headers: {
     Accept: 'application/json',
   },
