@@ -1,19 +1,21 @@
 <script setup>
+import { useCertificate } from '@/store/certificate.js'
+
 import { usePagiante } from '@/base/paginate'
 import SimpleCard from '@/components/base/SimpleCard.vue'
 import SimplePaginate from '@/components/base/SimplePaginate.vue'
-import { useCompany } from '@/store/company'
 
-const companyStore = useCompany()
-const { load } = usePagiante(companyStore)
+const certificateStore = useCertificate()
+
+const { load } = usePagiante(certificateStore)
 </script>
 
 <template>
   <VContainer>
-    <div class="mt-10 mb-10">
+    <div class="mt-4 mb-10">
       <SimpleCard
-        :data="companyStore.data"
-        to="company"
+        :data="certificateStore.data"
+        to="certificate"
       />
     </div>
 

@@ -1,77 +1,56 @@
+// Composables
 import { createRouter, createWebHistory } from 'vue-router'
+import NotFound from '@/pages/NotFound.vue'
 
-const LoginView = () => import('../views/admin/LoginView.vue')
-const HomeView = () => import('../views/HomeView.vue')
-const CompanyView = () => import('../views/CompanyView.vue')
-const CertificationView = () => import('../views/CertificationView.vue')
-const CompanyPage = () => import('@/pages/company.vue')
-const ProductPage = () => import('@/pages/product.vue')
-const CertificatePage = () => import('@/pages/certificate.vue')
-const AboutusPage = () => import('@/pages/aboutus.vue')
-
-const NotFound = () => import('../views/NotFoundView.vue');
-const router = createRouter({
-  history: createWebHistory(),
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: HomeView
-    },
-    {
-      path: '/comapny',
-      name: 'company',
-      component: CompanyView
-    },
-    {
-      path: '/comapny/:id',
-      name: 'companyPage',
-      component: CompanyPage
-    },
-    {
-      path: '/aboutUs',
-      name: 'aboutUs',
-      component: AboutusPage,
-      meta: {
-        title: "Home Page",
-        description: "This is the home page",
+const routes = [
+  {
+    path: '/',
+    component: () => import('@/layouts/default/Default.vue'),
+    children: [
+      { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
+      {
+        path: '',
+        name: 'Home',
+        component: () => import('@/views/HomeView.vue'),
       },
-    },
-    {
-      path: '/product/:id',
-      name: 'productPage',
-      component: ProductPage
-    },
-    {
-      path: '/certifiacte/:id',
-      name: 'certificatePage',
-      component: CertificatePage,
-      
-    },
-   
-    {
-      path: '/certifications',
-      name: 'certification',
-      component: CertificationView
-    },
-  
-    {
-      path: '/admin/login',
-      name: 'login',
-      component: LoginView
-    },
-    {
-      path:  '/:pathMatch(.*)*',
-      redirect: '/page-not-found'
-    },
+      {
+        path: 'certificates',
+        name: 'certificates',
+        component: () => import('@/views/CertificateView.vue'),
+      },
+      {
+        path: 'certificate/:id',
+        name: 'certificate',
+        component: () => import('@/pages/CertificatePage.vue'),
+      },
+      {
+        path: 'companies',
+        name: 'companies',
+        component: () => import('@/views/CompanyView.vue'),
+      },
+      {
+        path: 'company/:id',
+        name: 'company',
+        component: () => import('@/views/ProductView.vue'),
+      },
+      {
+        path: 'product/:id',
+        name: 'product',
+        component: () => import('@/pages/ProductPage.vue'),
+      },
+      {
+        path: 'about-us',
+        name: 'aboutus',
+        component: () => import('@/pages/AboutUs.vue'),
+      },
+    ],
 
-    {
-      path: '/page-not-found',
-      name: 'page-not-found',
-      component: NotFound
-    },
-  
-  ]
+  },
+]
+
+const router = createRouter({
+  history: createWebHistory(process.env.BASE_URL),
+  routes,
 })
 
 export default router

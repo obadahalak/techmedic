@@ -1,24 +1,34 @@
-
 <template>
-   
-    <div class="">
-
-        <div class="mt-20  -mb-10 sticky z-30 p-4 bg-green lg:w-1/3  w-3/6 text-white text-lg font-bold" style="border-radius: 0px 40px 40px 0px;">
-            <p>About-us</p>
-    </div>
-    <div class="  rounded-md bg-custom_gray p-2 mb-[108px] pb-[58px]">
-        
-        <p class="p-2 mt-10 leading-7 ">
-            <p class=" font-light"> Techmedic is a trading company specialized
-                in Medical supplies:</p>
-            <ol class="list-decimal   font-light ml-6 mt-2 ">
-                <li>Hearing Devices</li>
-                <li> Ophthalmic Devices</li>
-                <li> Sports Devices</li>
-                <li> Cosmetic Devices</li>
-
-            </ol>            
-        </p>
-    </div>
-</div>
+  <VRow
+    class="mt-15"
+    justify="center"
+    align="center"
+    align-content="center"
+  >
+    <VCol>
+      <div
+        class="bg-grey-lighten-3 "
+        style="position: relative;"
+      >
+        <div
+          class="bg-green-dark font-weight-bold text-h6 pa-4 w-50 rounded-e-xl  "
+          style="position: relative; top: -30px ;"
+        >
+          <p> About-us</p>
+        </div>
+        <div class="ml-8">
+          <p class="text-h5">
+            Techmedic is a trading company specialized
+            in Medical supplies:
+          </p>
+          <ol class="ml-6 mt-2 text-subtitle-1">
+            <li>Hearing Devices</li>
+            <li> Ophthalmic Devices</li>
+            <li> Sports Devices</li>
+            <li> Cosmetic Devices</li>
+          </ol>
+        </div>
+      </div>
+    </VCol>
+  </VRow>
 </template>

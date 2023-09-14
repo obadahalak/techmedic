@@ -1,77 +1,43 @@
-import axios from "axios";
+/* eslint-disable no-new */
+import axios from 'axios'
 import Notify from 'simple-notify'
-import { useGlobal } from '@/stores/global';
-import router from "../router";
+import 'simple-notify/dist/simple-notify.min.css'
+import { useGlobal } from '@/store/global'
 
 const createInstance = axios.create({
-    baseURL: `${import.meta.env.VITE_BASE_URL}`,
- 
-    headers: {
-        'Accept': 'application/json',
-        // 'Authorization': 'Bearer ' + localStorage.getItem('token')
-    },
- 
-    validateStatus: function (status) {
-        if (status >= 200 && status < 300) {
-            return true;
-        }
-        if (status === 403) {
-            return new Notify({
-                status: 'error',
-                title: 'unauthorize',
-                text: 'Not authorized to enter',
-                effect: 'slide',
-                type: 3,
-                'autoclose':true,
-                autotimeout: 1000,
-            });
-        }
-        if (status === 500) {
-            return new Notify({
-                status: 'error',
-                title: 'error',
-                text: 'server under maintennace',
-                effect: 'slide',
-                type: 3,
-                'autoclose':true,
-                autotimeout: 1000,
-            });
-        }
-        if(status===404){
-            return   new Notify({
-                status: 'error',
-                title: '404',
-                text: ' not found ',
-                effect: 'slide',
-                'autoclose':true,
-                autotimeout: 1000,
-                type: 3
-            });  
-            // router.push('/certifications');
-        }
+  baseURL: 'http://127.0.0.1:60/api',
 
-    },
-});
+  headers: {
+    Accept: 'application/json',
+  },
 
+})
 
-createInstance.interceptors.request.use(config => {
-   
-    useGlobal().setloading(true);
+createInstance.interceptors.request.use((config) => {
+  useGlobal().setloading()
 
-    return config;
+  return config
+})
 
-});
+createInstance.interceptors.response.use((response) => {
+  useGlobal().setloading()
+  if (response.data.status < 300 && response.data.status >= 200)
 
-createInstance.interceptors.response.use(function (response) {
+    return response.data
+}, (error) => {
+  useGlobal().setloading()
 
-    useGlobal().setloading(false);
+  if (error.response.status === 500) {
+    new Notify({
+      status: 'error',
+      title: 'Error from server.',
+      text: 'please try again',
+      autoclose: true,
+      position: 'right bottom',
+    })
+  }
 
-    return response;
+  return Promise.reject(error)
+})
 
-
-}, function (error) {
-    useGlobal().setloading(false);
-    return Promise.reject(error);
-});
-
-export default createInstance;
+export default createInstance

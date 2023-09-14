@@ -1,21 +1,29 @@
 <template>
-    <div class="mt-10 ml-10">
-        <p class="text-pink-800 text-lg font-bold">EXPLORER</p>
-        <div class="mt-4">
-            <ul class="text-white  hover:cursor-pointer">
-                <router-link :to="{ path: '/' }">
-
-                    <li class="">Home</li>
-                </router-link>
-                <router-link :to="{ name: 'aboutUs' }">
-
-                    <li class="mt-2">About us</li>
-                </router-link>
-                <router-link :to="{  name:'company' }">
-
-                    <li class="mt-2">Products</li>
-                </router-link>
-            </ul>
-        </div>
+  <div class="mt-10 ml-10">
+    <p class="text-pink-darken-4 text-h6 font-weight-black">
+      EXPLORER
+    </p>
+    <div class="mt-4">
+      <ul
+        class="text-white  "
+        style="list-style: none; "
+      >
+        <RouterLink :to="{ name: 'Home' }">
+          <li class="text-white">
+            Home
+          </li>
+        </RouterLink>
+        <RouterLink :to="{ name: 'aboutus' }">
+          <li class="mt-2 text-white">
+            About us
+          </li>
+        </RouterLink>
+        <RouterLink :to="{ name: 'companies' }">
+          <li class="mt-2 text-white">
+            Products
+          </li>
+        </RouterLink>
+      </ul>
     </div>
+  </div>
 </template>

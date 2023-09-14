@@ -1,29 +1,41 @@
 <script setup>
-import aboutUsFooter from './AboutUs-footer.vue';
-import explorerFooter from './Explorer-footer.vue';
-import contactUsFooter from './ContactUs-footer.vue'
-import ContactWithUsFooter from './ContactWithUs-footer.vue';
-import {useGlobal} from '@/stores/global.js'
-
-
+import AboutUsFooter from './AboutUs-footer.vue'
+import ContactUsFooter from './ContactUs-footer.vue'
+import ContactWithUsFooter from './ContactWithUs-footer.vue'
+import ExplorerFooter from './Explorer-footer.vue'
+import { useGlobal } from '@/store/global.js'
 </script>
 
 <template>
-    <div v-show="!useGlobal().loading">
+  <VRow
+    v-if="!useGlobal().loading"
+    class="bg-purple-dark"
+  >
+    <VCol
+      cols="12"
+      md="6"
+      lg="3"
+    >
+      <AboutUsFooter />
+    </VCol>
+    <VCol>
+      <ExplorerFooter />
+    </VCol>
 
-  
-    <div ref="footer" class="grid lg:grid-cols-4 md:grid-cols-2 bg-gray-800 gap-5 mt-auto p-6">
-       
-       
-        <aboutUsFooter />
+    <VCol
+      cols="12"
+      md="6"
+      lg="3"
+    >
+      <ContactUsFooter />
+    </VCol>
 
-        <explorerFooter />
-
-        <contactUsFooter />
-
-        <ContactWithUsFooter />
-
-
-    </div>
-</div>
+    <VCol
+      cols="12"
+      md="6"
+      lg="3"
+    >
+      <ContactWithUsFooter />
+    </VCol>
+  </VRow>
 </template>

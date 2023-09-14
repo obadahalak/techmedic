@@ -1,19 +1,22 @@
-import './style.css'
-import App from './App.vue'
-import router from './router'
+/**
+ * main.js
+ *
+ * Bootstraps Vuetify and other plugins then mounts the App`
+ */
+import InfiniteLoading from 'v3-infinite-loading'
 
+// Components
 import { createApp } from 'vue'
-import {  createPinia } from 'pinia';
-import { initFlowbite } from 'flowbite'
+import App from './App.vue'
 
+// Composables
+
+// Plugins
+import { registerPlugins } from '@/plugins'
 
 const app = createApp(App)
-const pinia = createPinia();
+app.component('InfiniteLoading', InfiniteLoading)
 
+registerPlugins(app)
 
-
-app.use(pinia);
-app.use(initFlowbite());
-app.use(createPinia())
-app.use(router)
 app.mount('#app')
