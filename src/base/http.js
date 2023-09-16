@@ -20,7 +20,8 @@ createInstance.interceptors.request.use((config) => {
 
 createInstance.interceptors.response.use((response) => {
   useGlobal().setloading()
-  if (response.data.status < 300 && response.data.status >= 200)
+
+  if (response.status < 300 && response.status >= 200)
 
     return response.data
 }, (error) => {
