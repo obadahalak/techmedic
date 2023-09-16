@@ -25,6 +25,7 @@ const homeStore = useHome()
           <VImg
 
             class="rounded-md bg-grey-lighten-4 rounded-md "
+            lazy-src="@/assets/default.png"
             :src="company.logo"
             aspect-ratio="16/9"
             height="300"

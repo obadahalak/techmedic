@@ -32,6 +32,7 @@ const homeStore = useHome()
         >
           <VCardItem>
             <VImg
+              lazy-src="@/assets/default.png"
               :src="product.image"
               :width="300"
               height="300"
