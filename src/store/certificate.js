@@ -12,7 +12,7 @@ export const useCertificate = defineStore('certificate', () => {
   const error = ref([])
 
   async function getAll() {
-    await http.get(`certificates?page=${meta.value.current_page}`).then((response) => {
+    return await http.get(`certificates?page=${meta.value.current_page}`).then((response) => {
       meta.value = response.meta
 
       return data.value = [...data.value, ...response.data]

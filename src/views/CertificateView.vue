@@ -14,6 +14,7 @@ const { load } = usePagiante(certificateStore)
   <VContainer>
     <div class="mt-4 mb-10">
       <SimpleCard
+        v-if="certificateStore.data.length > 0"
         :data="certificateStore.data"
         to="certificate"
       />

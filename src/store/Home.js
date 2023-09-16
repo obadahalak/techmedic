@@ -12,23 +12,23 @@ export const useHome = defineStore('home', () => {
   function getCompanies() {
     http.get('/companies').then((response) => {
       return companies.value = response.data.slice(0, 3)
-    }).catch((error) => {
-      error.value = error
+    }).catch((err) => {
+      error.value = err.errors
     })
   }
   function getProducts() {
     http.get('/products').then((response) => {
       return products.value = response.data.slice(0, 4)
-    }).catch((error) => {
-      error.value = error.response.data
+    }).catch((err) => {
+      error.value = err.errors
     })
   }
 
   async function getBanners() {
     await http.get('/slider-images').then((response) => {
       return bannners.value = response.data
-    }).catch((error) => {
-      error.value = error.response.data
+    }).catch((err) => {
+      error.value = err.errors
     })
   }
   function show() {
