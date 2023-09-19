@@ -20,6 +20,9 @@ const { load } = usePagiante(certificateStore)
       />
     </div>
 
-    <SimplePaginate :load="load" />
+    <SimplePaginate
+      v-if="certificateStore.data.length === 0"
+      :load="load"
+    />
   </VContainer>
 </template>

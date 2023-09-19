@@ -22,30 +22,22 @@ const { load } = usePagiante(producStore, '?company=' + `${useRouter().currentRo
     + '&category=' + `${category.value}`
     + '&search_key=' + `${search.value}`)
 
-function filter(e) {
-  producStore.data = []
-  producStore.getAll(`?company=${id
-  }&search_key=` + `${e}`,
-  '&category=' + `${e}`,
-  )
-}
-function reset() {
-  category.value = null
-  search.value = null
-  producStore.getAll(`?company=${id}`)
-}
+// function filter(e) {
+//   producStore.data = []
+//   producStore.getAll(`?company=${id
+//   }&search_key=` + `${e}`,
+//   '&category=' + `${e}`,
+//   )
+// }
+// function reset() {
+//   category.value = null
+//   search.value = null
+//   producStore.getAll(`?company=${id}`)
+// }
 </script>
 
 <template>
   <VContainer>
-    <SearchBar
-      class="mt-8"
-      :category-list="companyStore.item.categories"
-      @search="filter"
-      @select-category="filter"
-      @reset="reset"
-    />
-
     <div
       :class=" $vuetify.display.smAndDown ? 'w-50' : 'w-25' "
       class=" mt-8 pa-3 bg-green-dark   rounded-e-xl mb-4 "
@@ -54,8 +46,8 @@ function reset() {
     </div>
 
     <VRow
-      v-if="producStore.data"
-      class="mx-4 mb-10"
+      v-if="producStore.data.length > 0"
+      class="mx-4 "
     >
       <VCol
         v-for="product in producStore.data"
@@ -67,8 +59,9 @@ function reset() {
         <VHover>
           <template #default="{ isHovering, props }">
             <VCard
+
               elevation="0"
-              class="mt-10"
+              class="mt-10 mb-15"
               :to="{ name: 'product', params: { id: product.id } }"
             >
               <VImg
@@ -87,6 +80,10 @@ function reset() {
       </VCol>
     </VRow>
 
-    <SimplePaginate :load="load" />
+    <SimplePaginate
+      v-if="producStore.data.length === 0"
+      :load="load"
+      class=""
+    />
   </VContainer>
 </template>
