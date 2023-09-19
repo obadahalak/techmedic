@@ -18,11 +18,14 @@ onMounted(() => {
     class="mt-4"
   >
     <SimpleSlider :data="productStore.item.images" />
-    <p class="text-h5 font-weight-medium text-center mt-4  text-decoration-underline">
-      {{ productStore.item.name }}
-    </p>
+    <div class="d-flex  justify-space-between mx-8  text-h5 font-weight-medium text-center mt-4 ">
+      <p>{{ productStore.item.name }}</p>
+      <p class=" text-decoration-underline">
+        {{ productStore.item.price }}
+      </p>
+    </div>
 
-    <div class="mt-4">
+    <div class="mt-6">
       <p class="text-h5 font-weight-medium ">
         {{ productStore.item?.category?.name }}
       </p>
