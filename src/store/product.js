@@ -29,5 +29,12 @@ export const useProduct = defineStore('product', () => {
     })
   }
 
-  return { data, item, meta, error, getAll, getById }
+  function reset() {
+    data.value = []
+    error.value = []
+    item.value = []
+    meta.value = []
+  }
+
+  return { data, item, meta, error, getAll, getById, reset }
 })
