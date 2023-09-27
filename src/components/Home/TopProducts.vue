@@ -1,4 +1,5 @@
 <script setup>
+import Skeleteon from '@/layouts/Skeleteon.vue'
 import { useHome } from '@/store/Home'
 
 const homeStore = useHome()
@@ -6,13 +7,16 @@ const homeStore = useHome()
 
 <template>
   <div
-    v-if="homeStore.products.length > 0"
-    class="bg-grey-lighten-2"
+
+    class="bg-grey-lighten-2 pb-8"
   >
-    <p class="text-h6 font-weight-bold  text-uppercase pa-6 ">
+    <p class="text-h6 font-weight-bold   text-uppercase pa-6 ">
       Top products:
     </p>
+    <Skeleteon :loading="homeStore.products.length > 0" />
+
     <VRow
+      v-if="homeStore.products.length > 0"
       no-gutters
       justify="center"
     >
@@ -32,13 +36,12 @@ const homeStore = useHome()
         >
           <VCardItem>
             <VImg
-              lazy-src="@/assets/default.png"
               :src="product.image"
-              :width="300"
-              height="300"
+              lazy-src="@/assets/company-logo.webp"
+              height="260"
               aspect-ratio="16/9"
-              cover
-              class="rounded-lg"
+
+              class="rounded-lg border"
             />
 
             <div class="text-h6 my-2 text-subtitle">

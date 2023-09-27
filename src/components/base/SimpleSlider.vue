@@ -5,7 +5,7 @@ const props = defineProps({ data: { type: Array, default: Array } })
 <template>
   <VCarousel
     cycle
-    height="400"
+    :height="$vuetify.display.smAndDown ? 280 : 400"
     hide-delimiter-background
     show-arrows="hover"
     class="rounded-lg"
@@ -13,9 +13,14 @@ const props = defineProps({ data: { type: Array, default: Array } })
     <VCarouselItem
       v-for="image in props.data"
       :key="image.id"
-      lazy-src="@/assets/default.png"
-      gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.50)"
+
       :src="image.src"
+    />
+    <VImg
+
+      src="@/assets/company-logo.webp"
+      height="100%"
+      eager
     />
   </VCarousel>
 </template>

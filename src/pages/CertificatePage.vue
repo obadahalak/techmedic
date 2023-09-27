@@ -16,12 +16,10 @@ onMounted(() => {
     class="mt-4"
   >
     <VImg
-      v-bind="props"
-      gradient="to top, rgba(0,0,0,.1), rgba(0,0,0,.5) "
       :src="certificateStore.item.image"
       max-height="400"
       class="rounded-lg"
-      lazy-src="@/assets/default.png"
+      lazy-src="@/assets/company-logo.webp"
     />
 
     <p class="text-h5 font-weight-medium text-center mt-4  text-decoration-underline">

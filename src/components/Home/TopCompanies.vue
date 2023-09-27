@@ -1,44 +1,39 @@
 <script setup>
 import { useHome } from '@/store/Home'
+import Skeleteon from '@/layouts/Skeleteon.vue'
 
 const homeStore = useHome()
 </script>
 
 <template>
-  <p class="text-h6 font-weight-bold mb-6 text-uppercase ">
+  <p class="text-h6 font-weight-bold mb-4  text-uppercase ">
     Top companies:
   </p>
-  <VRow
-    v-for="company in homeStore.companies"
-    :key="company.id"
-    no-gutters
-  >
+  <Skeleteon :loading="homeStore.companies.length > 0" />
+
+  <VRow v-if="homeStore.companies.length > 0">
     <VCol
+      v-for="company in homeStore.companies"
+      :key="company.id"
       cols="12"
-      sm="5"
+      lg="4"
+      md="6"
+      sm="6"
     >
       <VSheet
 
-        class="pa-2 ma-2"
+        class="pa-2 ma-2 "
       >
         <RouterLink :to="{ name: 'company', params: { id: company.id } }">
           <VImg
-
-            class="rounded-md bg-grey-lighten-4 rounded-md "
-            lazy-src="@/assets/default.png"
+            class="rounded-md border-sm "
+            lazy-src="@/assets/company-logo.webp"
             :src="company.logo"
             aspect-ratio="16/9"
-            height="300"
+            height="260"
           />
         </RouterLink>
-      </VSheet>
-    </VCol>
-    <VCol
-      cols="12"
-      sm="7"
-    >
-      <VSheet class=" text-md-start text-sm-start text-center mt-sm-6">
-        <p class="text-h6  font-weight-bold">
+        <p class="text-h6 mt-2 text-center font-weight-bold">
           {{ company.name }}
         </p>
       </VSheet>
