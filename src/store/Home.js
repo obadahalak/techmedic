@@ -5,20 +5,16 @@ import http from '@/base/http.js'
 export const useHome = defineStore('home', () => {
   const companies = ref([])
   const products = ref([])
+  const certificates = ref([])
   const bannners = ref([])
   const empty = ref(false)
   const error = ref('')
 
-  function getCompanies() {
-    http.get('/companies').then((response) => {
-      return companies.value = response.data.slice(0, 3)
-    }).catch((err) => {
-      error.value = err.errors
-    })
-  }
-  function getProducts() {
-    http.get('/products').then((response) => {
-      return products.value = response.data.slice(0, 4)
+  function allServices() {
+    http.get('/home').then((response) => {
+      products.value = response.data.products
+      certificates.value = response.data.certificates
+      companies.value = response.data.companies
     }).catch((err) => {
       error.value = err.errors
     })
@@ -36,5 +32,5 @@ export const useHome = defineStore('home', () => {
       return true
   }
 
-  return { show, getBanners, getCompanies, getProducts, companies, products, error, empty, bannners }
+  return { show, getBanners, allServices, companies, products, certificates, error, empty, bannners }
 })
