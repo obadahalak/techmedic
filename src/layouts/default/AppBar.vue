@@ -16,7 +16,7 @@ const globalStore = useGlobal()
       <RouterLink :to="{ name: 'Home' }">
         <VImg
           :class=" $vuetify.display.smAndDown ? 'ml-auto' : '' "
-          src="@/assets/company-logo.png"
+          src="@/assets/company-logo.webp"
           min-width="100"
           max-width="180"
         />
