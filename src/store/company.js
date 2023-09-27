@@ -30,6 +30,12 @@ export const useCompany = defineStore('company', () => {
     if (data.value.length > 0)
       return true
   }
+  function reset() {
+    data.value = []
+    error.value = []
+    item.value = []
+    meta.value = []
+  }
 
-  return { getAll, data, item, error, meta, getByid, show }
+  return { getAll, data, item, error, meta, getByid, show, reset }
 })
