@@ -7,7 +7,7 @@
   >
     <VCol>
       <div
-        class="bg-grey-lighten-3 "
+        class="bg-grey-lighten-3 pb-10 "
         style="position: relative;"
       >
         <div

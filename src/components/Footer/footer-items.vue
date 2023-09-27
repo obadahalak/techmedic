@@ -9,7 +9,7 @@ import { useGlobal } from '@/store/global.js'
 <template>
   <VRow
     v-if="!useGlobal().loading"
-    class="bg-purple-dark"
+    class="bg-purple-dark pb-8 "
   >
     <VCol
       cols="12"

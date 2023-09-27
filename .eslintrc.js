@@ -7,7 +7,7 @@ module.exports = {
   extends: [
     '@antfu/eslint-config-vue',
     'plugin:import/recommended',
-    'plugin:promise/recommended',
+
     'plugin:sonarjs/recommended',
     'plugin:vue/vue3-recommended',
     'eslint:recommended',

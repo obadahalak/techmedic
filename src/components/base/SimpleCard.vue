@@ -27,7 +27,7 @@ const route = props.to
             <VImg
               in
               :src="item.image ?? item.logo"
-              lazy-src="@/assets/default.png"
+              lazy-src="@/assets/default.webp"
               max-height="255"
               contain
             />

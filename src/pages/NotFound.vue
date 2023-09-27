@@ -5,7 +5,7 @@
       :height="600"
       aspect-ratio="4/3"
       class="mx-auto"
-      src="@/assets/404.png"
+      src="@/assets/404.webp"
     />
   </VContainer>
 </template>
