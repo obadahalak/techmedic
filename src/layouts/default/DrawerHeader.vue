@@ -16,6 +16,7 @@ import { useGlobal } from '@/store/global'
         <VDivider />
 
         <VList
+         role="tablist" aria-label="drawer Tabs"
           density="compact"
           nav
         >

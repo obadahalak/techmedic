@@ -31,6 +31,7 @@ const homeStore = useHome()
             :src="company.logo"
             aspect-ratio="16/9"
             height="260"
+            alt="company image"
           />
         </RouterLink>
         <p class="text-h6 mt-2 text-center font-weight-bold">

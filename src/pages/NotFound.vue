@@ -1,6 +1,7 @@
 <template>
   <VContainer>
     <VImg
+    alt="not found image"
       :width="600"
       :height="600"
       aspect-ratio="4/3"

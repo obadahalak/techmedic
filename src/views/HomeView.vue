@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted } from 'vue'
+// import { onMounted } from 'vue'
 import TopCompanies from '@/components/Home/TopCompanies.vue'
 import TopProducts from '@/components/Home/TopProducts.vue'
 import { useHome } from '@/store/Home'
@@ -7,10 +7,12 @@ import SimpleSlider from '@/components/base/SimpleSlider.vue'
 import TopCertificates from '@/components/Home/TopCertificates.vue'
 
 const homeStore = useHome()
-onMounted(() => {
-  homeStore.getBanners()
-  homeStore.allServices()
-})
+
+// onMounted(() => {
+homeStore.getBanners()
+homeStore.allServices()
+
+// })
 </script>
 
 <template>

@@ -13,7 +13,7 @@
 
         aspect-ratio="4/3"
         cover
-
+  alt="empty image"
         src="@/assets/empty.webp"
       />
     </VCol>

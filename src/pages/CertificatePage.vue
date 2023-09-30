@@ -16,6 +16,7 @@ onMounted(() => {
     class="mt-4"
   >
     <VImg
+    alt="certificate image"
       :src="certificateStore.item.image"
       max-height="400"
       class="rounded-lg"

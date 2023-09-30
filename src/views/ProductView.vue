@@ -73,6 +73,7 @@ function reset() {
           :to="{ name: 'product', params: { id: product.id } }"
         >
           <VImg
+          alt="product image"
             :src="product.image"
             lazy-src="@/assets/company-logo.webp"
             max-height="300"

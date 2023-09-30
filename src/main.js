@@ -3,11 +3,18 @@
  *
  * Bootstraps Vuetify and other plugins then mounts the App`
  */
-import InfiniteLoading from 'v3-infinite-loading'
+// import InfiniteLoading from 'v3-infinite-loading'
 
+//
+//
 // Components
 import { createApp } from 'vue'
 import App from './App.vue'
+import DefaultBar from '@/layouts/default/AppBar.vue'
+
+import DrowerHeader from '@/layouts/default/DrawerHeader.vue'
+
+import './registerServiceWorker'
 
 // Composables
 
@@ -15,8 +22,9 @@ import App from './App.vue'
 import { registerPlugins } from '@/plugins'
 
 const app = createApp(App)
-app.component('InfiniteLoading', InfiniteLoading)
 
 registerPlugins(app)
+app.component('DrowerHeader', DrowerHeader)
+app.component('DefaultBar', DefaultBar)
 
 app.mount('#app')

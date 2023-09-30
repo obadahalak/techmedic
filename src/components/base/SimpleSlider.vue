@@ -15,9 +15,10 @@ const props = defineProps({ data: { type: Array, default: Array } })
       :key="image.id"
 
       :src="image.src"
-    />
+      alt="sider-image"
+      />
     <VImg
-
+  alt="sider"
       src="@/assets/company-logo.webp"
       height="100%"
       eager

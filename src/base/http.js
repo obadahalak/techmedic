@@ -7,7 +7,7 @@ import { useGlobal } from '@/store/global'
 const createInstance = axios.create({
   baseURL: `${import.meta.env.VITE_BASE_URL}`,
   headers: {
-    Accept: 'application/json',
+    'Accept': 'application/json',
   },
 
 })

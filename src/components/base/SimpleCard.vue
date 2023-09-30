@@ -17,6 +17,7 @@ const route = props.to
       <VHover>
         <template #default="{ isHovering }">
           <VCard
+          role="button"
             max-width="400"
             :to="{ name: route, params: { id: item.id } }"
             :rounded="isHovering ? 'lg' : ''"
@@ -25,7 +26,7 @@ const route = props.to
             border="sm"
           >
             <VImg
-              in
+              alt="image"
               :src="item.image ?? item.logo"
               lazy-src="@/assets/default.webp"
               max-height="255"

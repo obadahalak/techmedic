@@ -40,6 +40,7 @@ const homeStore = useHome()
               lazy-src="@/assets/company-logo.webp"
               height="260"
               aspect-ratio="16/9"
+              alt="product image"
 
               class="rounded-lg border"
             />
